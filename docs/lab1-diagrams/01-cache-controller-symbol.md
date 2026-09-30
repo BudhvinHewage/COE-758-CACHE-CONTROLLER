@@ -47,9 +47,9 @@ flowchart LR
     CLK --> SRAM
     CLK --> SC
 ```
-## Final Component Symbol
-![alt text](cache_controller_symbol_final.svg)
-![alt text](image-1.png)
+## Final Component Symbol & System Block Diagram
+![alt text](01-cache-controller-symbol-1.svg)
+![alt text](03-system-block-diagram-1.svg)
 
 ## Code Declaration
 ```vhdl

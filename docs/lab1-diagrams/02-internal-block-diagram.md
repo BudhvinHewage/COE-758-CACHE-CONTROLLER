@@ -96,4 +96,5 @@ flowchart TB
     XFER -->|"MEMSTRB, WR/RD"| SC
     SC -->|"DOUT (8b)"| MUXW
 ```
-## Complete Block Diagram
+## Final Internal Block Diagram
+![alt text](02-internal-block-diagram-1.svg)
