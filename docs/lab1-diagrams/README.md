@@ -1,4 +1,4 @@
-# COE 758 — Cache Controller: Lab 1 Diagrams (Symbol / Internal / System)
+# COE 758 — Cache Controller: Project 1 Diagrams (Symbol / Internal / System)
 
 > **Due: Wednesday, during the lab.**
 > Three required artifacts for the cache controller (Project #1), as markdown +
@@ -37,6 +37,6 @@ Produce three views of the cache controller:
 - CLI: `npx -y @mermaid-js/mermaid-cli -i <file>.mmd -o out.svg` (if needed).
 
 ## Status
-- [ ] Cross-checked against the exact Lab 1 submission requirements in `Cache_Project_12-09-10_.pdf`
-- [ ] Diagrams updated to match whatever you settled on (FSM states, storage structure)
-- [ ] Rendered / pasted into the lab submission doc if the format requires images
+- [x] Cross-checked against the exact Lab 1 submission requirements in `Cache_Project_12-09-10_.pdf`
+- [x] Diagrams updated to match whatever you settled on (FSM states, storage structure)
+- [x] Rendered / pasted into the lab submission doc if the format requires images
