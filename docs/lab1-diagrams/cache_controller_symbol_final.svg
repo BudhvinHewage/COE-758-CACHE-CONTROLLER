@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <rect width="900" height="520" fill="white"/>
+
+  <!-- Cache controller symbol -->
+  <rect x="300" y="70" width="300" height="380" fill="white" stroke="black" stroke-width="2.5"/>
+
+  <!-- Left pins: CPU -->
+  <line x1="90" y1="110" x2="300" y2="110" stroke="black" stroke-width="2"/>
+  <polygon points="300,110 288,104 288,116" fill="black"/>
+  <text x="80" y="115" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">CS</text>
+
+  <line x1="90" y1="150" x2="300" y2="150" stroke="black" stroke-width="2"/>
+  <polygon points="300,150 288,144 288,156" fill="black"/>
+  <text x="80" y="155" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">WR/RD</text>
+
+  <line x1="90" y1="190" x2="300" y2="190" stroke="black" stroke-width="2"/>
+  <polygon points="300,190 288,184 288,196" fill="black"/>
+  <text x="80" y="195" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">ADD[15:0]</text>
+
+  <line x1="90" y1="230" x2="300" y2="230" stroke="black" stroke-width="2"/>
+  <polygon points="300,230 288,224 288,236" fill="black"/>
+  <text x="80" y="235" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">DIN[7:0]</text>
+
+  <line x1="90" y1="270" x2="300" y2="270" stroke="black" stroke-width="2"/>
+  <polygon points="90,270 102,264 102,276" fill="black"/>
+  <text x="80" y="275" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">DOUT[7:0]</text>
+
+  <line x1="90" y1="310" x2="300" y2="310" stroke="black" stroke-width="2"/>
+  <polygon points="90,310 102,304 102,316" fill="black"/>
+  <text x="80" y="315" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">RDY</text>
+
+  <!-- Clock -->
+  <line x1="90" y1="400" x2="300" y2="400" stroke="black" stroke-width="2"/>
+  <polygon points="300,400 288,394 288,406" fill="black"/>
+  <text x="80" y="405" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">CLK</text>
+
+  <!-- Right pins: SDRAM controller -->
+  <line x1="600" y1="110" x2="810" y2="110" stroke="black" stroke-width="2"/>
+  <polygon points="810,110 798,104 798,116" fill="black"/>
+  <text x="820" y="115" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">ADD[15:0]</text>
+
+  <line x1="600" y1="150" x2="810" y2="150" stroke="black" stroke-width="2"/>
+  <polygon points="810,150 798,144 798,156" fill="black"/>
+  <text x="820" y="155" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">WR/RD</text>
+
+  <line x1="600" y1="190" x2="810" y2="190" stroke="black" stroke-width="2"/>
+  <polygon points="810,190 798,184 798,196" fill="black"/>
+  <text x="820" y="195" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">MEMSTRB</text>
+
+  <line x1="600" y1="230" x2="810" y2="230" stroke="black" stroke-width="2"/>
+  <polygon points="810,230 798,224 798,236" fill="black"/>
+  <text x="820" y="235" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">DIN[7:0]</text>
+
+  <line x1="600" y1="270" x2="810" y2="270" stroke="black" stroke-width="2"/>
+  <polygon points="600,270 612,264 612,276" fill="black"/>
+  <text x="820" y="275" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">DOUT[7:0]</text>
+
+  <!-- Right pins: Local SRAM -->
+  <line x1="600" y1="330" x2="810" y2="330" stroke="black" stroke-width="2"/>
+  <polygon points="810,330 798,324 798,336" fill="black"/>
+  <text x="820" y="335" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">ADD[7:0]</text>
+
+  <line x1="600" y1="365" x2="810" y2="365" stroke="black" stroke-width="2"/>
+  <polygon points="810,365 798,359 798,371" fill="black"/>
+  <text x="820" y="370" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">WEN</text>
+
+  <line x1="600" y1="400" x2="810" y2="400" stroke="black" stroke-width="2"/>
+  <polygon points="810,400 798,394 798,406" fill="black"/>
+  <text x="820" y="405" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">DIN[7:0]</text>
+
+  <line x1="600" y1="435" x2="810" y2="435" stroke="black" stroke-width="2"/>
+  <polygon points="600,435 612,429 612,441" fill="black"/>
+  <text x="820" y="440" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="black">DOUT[7:0]</text>
+
+  <!-- Internal symbol label -->
+  <text x="450" y="235" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="black">CACHE CONTROLLER</text>
+  <text x="450" y="262" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="black">(symbol)</text>
+</svg>

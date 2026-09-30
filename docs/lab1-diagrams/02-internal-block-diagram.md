@@ -82,7 +82,7 @@ flowchart TB
     FSM -->|"set on write, check on miss"| DR
     DR --> FSM
     FSM -->|"sel: CPU vs SDRAM"| MUXW
-    CPU -->|"DIN (8b)"| MUXW
+    CPU -->|"DOUT (8b)"| MUXW
     MUXW -->|"DIN"| SRAM
     XFER -->|"ADDR[7:0], WEN"| SRAM
     SRAM -->|"DOUT (8b)"| MUXR
@@ -94,19 +94,6 @@ flowchart TB
     XFER --> ADDRGEN
     ADDRGEN -->|"ADD[15:0] (offset=0)"| SC["SDRAM CONTROLLER"]
     XFER -->|"MEMSTRB, WR/RD"| SC
+    SC -->|"DOUT (8b)"| MUXW
 ```
-
-
-
-## Checklist before submission
-- [ ] Address fields are **8/3/5** (project spec), not the lecture's 12/16/4.
-- [ ] Tag/valid/dirty storage shown as **8 entries** each.
-- [ ] Miss path shows offset forced to `00000` before SDRAM (both fetch and
-      write-back addresses).
-- [ ] Dirty=1 replacement order: write-back *first*, then fetch.
-- [ ] RDY behavior explained (stalled during miss).
-- [ ] Write-data 2:1 mux (CPU DIN / SDRAM DOUT → SRAM DIN) shown, FSM-controlled.
-- [ ] Read-data 1:2 mux (SRAM DOUT → CPU or SDRAM) shown, FSM-controlled.
-- [ ] No direct splitter→SRAM arrows; SRAM address driven by block-transfer logic.
-- [ ] CS and WR/RD wired into the FSM (CS also gates the splitter input).
-- [ ] Storage structure matches whatever you actually settle on in VHDL.
+## Complete Block Diagram

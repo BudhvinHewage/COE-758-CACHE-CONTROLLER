@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="500" viewBox="0 0 900 500">
+
+  <rect width="900" height="500" fill="white"/>
+
+  <!-- Cache Controller symbol -->
+  <rect x="280" y="95" width="340" height="310"
+        fill="white" stroke="black" stroke-width="3"/>
+
+  <!-- Left-side CPU interface pins -->
+  <line x1="90" y1="145" x2="280" y2="145"
+        stroke="black" stroke-width="2"/>
+  <polygon points="280,145 265,138 265,152" fill="black"/>
+  <text x="78" y="150"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="17" fill="black">CS, WR/RD</text>
+
+  <line x1="90" y1="205" x2="280" y2="205"
+        stroke="black" stroke-width="2"/>
+  <polygon points="280,205 265,198 265,212" fill="black"/>
+  <text x="78" y="211"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="17" fill="black">ADD[15:0]</text>
+
+  <line x1="90" y1="265" x2="280" y2="265"
+        stroke="black" stroke-width="2"/>
+  <polygon points="280,265 265,258 265,272" fill="black"/>
+  <text x="78" y="271"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="17" fill="black">DIN[7:0]</text>
+
+  <line x1="90" y1="325" x2="280" y2="325"
+        stroke="black" stroke-width="2"/>
+  <polygon points="90,325 105,318 105,332" fill="black"/>
+  <text x="78" y="331"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="17" fill="black">DOUT[7:0], RDY</text>
+
+  <!-- Clock -->
+  <line x1="90" y1="385" x2="280" y2="385"
+        stroke="black" stroke-width="2"/>
+  <polygon points="280,385 265,378 265,392" fill="black"/>
+  <text x="78" y="391"
+        text-anchor="end"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="17" fill="black">CLK</text>
+
+  <!-- Right-side SDRAM interface -->
+  <line x1="620" y1="145" x2="810" y2="145"
+        stroke="black" stroke-width="2"/>
+  <polygon points="810,145 795,138 795,152" fill="black"/>
+  <text x="822" y="151"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="17" fill="black">SDRAM</text>
+
+  <text x="822" y="174"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="14" fill="black">ADD[15:0], WR/RD</text>
+  <text x="822" y="195"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="14" fill="black">MEMSTRB, DIN[7:0]</text>
+  <text x="822" y="216"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="14" fill="black">DOUT[7:0]</text>
+
+  <!-- Right-side Local SRAM interface -->
+  <line x1="620" y1="290" x2="810" y2="290"
+        stroke="black" stroke-width="2"/>
+  <polygon points="810,290 795,283 795,297" fill="black"/>
+  <text x="822" y="296"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="17" fill="black">LOCAL SRAM</text>
+
+  <text x="822" y="319"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="14" fill="black">ADD[7:0], WEN</text>
+  <text x="822" y="340"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="14" fill="black">DIN[7:0], DOUT[7:0]</text>
+
+  <!-- Symbol text -->
+  <text x="450" y="235"
+        text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="25" font-weight="bold" fill="black">
+    CACHE
+  </text>
+  <text x="450" y="270"
+        text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="25" font-weight="bold" fill="black">
+    CONTROLLER
+  </text>
+
+  <!-- Figure caption -->
+  <text x="450" y="455"
+        text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="15" fill="black">
+    Figure: Cache Controller Symbol
+  </text>
+
+</svg>
