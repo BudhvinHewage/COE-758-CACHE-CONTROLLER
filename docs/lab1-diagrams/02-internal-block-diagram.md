@@ -81,7 +81,7 @@ flowchart TB
     FSM -->|"RDY (low during miss)"| CPU
     XFER --> ADDRGEN
     ADDRGEN -->|"ADD[15:0] (offset=0)"| SC["SDRAM CONTROLLER"]
-    XFER <-->|"DIN/DOUT, MEMSTRB, WR/RD"| SC
+    XFER -->|"MEMSTRB, WR/RD"| SC
 ```
 
 
