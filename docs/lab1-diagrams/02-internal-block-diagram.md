@@ -97,4 +97,4 @@ flowchart TB
     SC -->|"DOUT (8b)"| MUXW
 ```
 ## Final Internal Block Diagram
-![alt text](02-internal-block-diagram-1.svg)
+![alt text](./images/02-internal-block-diagram-1.svg)

@@ -48,8 +48,8 @@ flowchart LR
     CLK --> SC
 ```
 ## Final Component Symbol & System Block Diagram
-![alt text](01-cache-controller-symbol-1.svg)
-![alt text](03-system-block-diagram-1.svg)
+![alt text](./images/01-cache-controller-symbol-1.svg)
+![alt text](./images/03-system-block-diagram-1.svg)
 
 ## Code Declaration
 ```vhdl
