@@ -25,6 +25,10 @@ From the project spec (this repo's `README.md`):
 - **Block-transfer logic** — drives the SDRAM-controller interface (16-bit
   addresses, burst/byte enables via `MEMSTRB`) and the BlockRAM interface
   (8-bit byte addresses, `WEN`).
+- **Write-data mux (2:1)** — selects the SRAM's `DIN` between CPU `DIN`
+  (hit write) and SDRAM `DOUT` (miss fetch); controlled by the FSM.
+- **Read-data mux (1:2)** — routes SRAM `DOUT` either to the CPU (hit read)
+  or to the SDRAM controller (dirty write-back); controlled by the FSM.
 - **RDY** to the CPU — high when the controller has the data (or accepts a write);
   low while the FSM is mid-miss.
 
@@ -49,7 +53,6 @@ From the project spec (this repo's `README.md`):
 ```mermaid
 flowchart TB
     subgraph CC["CACHE CONTROLLER — internals"]
-        AWR[("CPU ADDRESS REG<br/>ADD[15:0]")]
         SPLIT["ADDRESS SPLITTER<br/>TAG[15:8] · INDEX[7:5] · OFFSET[4:0]"]
         TAGR[("TAG MEM (8 x 8b)")]
         VR[("VALID BITS (8)")]
@@ -58,16 +61,19 @@ flowchart TB
         FSM["CONTROL FSM<br/>IDLE → HIT_R / HIT_W /<br/>MISS_FETCH / MISS_WRITEBACK"]
         XFER["BLOCK TRANSFER LOGIC<br/>(byte counters, MEMSTRB, RDY)"]
         ADDRGEN["ADDRESS GENERATOR<br/>[Tag & Index & 00000]"]
+        MUXW["2:1 DATA MUX<br/>(write into SRAM)"]
+        MUXR["1:2 DATA MUX<br/>(route SRAM DOUT)"]
     end
 
-    CPU["CPU (CS, WR/RD, ADD, DIN/DOUT)"] --> AWR
-    AWR --> SPLIT
+    CPU["CPU (CS, WR/RD, ADD, DIN/DOUT)"] --> SPLIT
+    CPU -->|"CS, WR/RD"| FSM
+    SRAM[("LOCAL SRAM<br/>(BlockRAM) 256 x 8")]
+
     SPLIT -->|"TAG (8b)"| CMP
     SPLIT -->|"INDEX (3b)"| TAGR
     SPLIT -->|"INDEX (3b)"| VR
     SPLIT -->|"INDEX (3b)"| DR
-    SPLIT -->|"INDEX:OFFSET → ADD[7:0]"| SRAM[("LOCAL SRAM<br/>(BlockRAM) 256 x 8")]
-    SPLIT -->|"OFFSET (5b)"| SRAM
+    SPLIT -->|"INDEX:OFFSET → ADD[7:0]"| XFER
     TAGR -->|"stored tag"| CMP
     VR -->|"valid?"| CMP
     CMP -->|"hit/miss + valid(y/n)"| FSM
@@ -75,10 +81,16 @@ flowchart TB
     FSM -->|"set (case 1 or 3)"| VR
     FSM -->|"set on write, check on miss"| DR
     DR --> FSM
+    FSM -->|"sel: CPU vs SDRAM"| MUXW
+    CPU -->|"DIN (8b)"| MUXW
+    MUXW -->|"DIN"| SRAM
+    XFER -->|"ADDR[7:0], WEN"| SRAM
+    SRAM -->|"DOUT (8b)"| MUXR
+    MUXR -->|"to CPU (hit read)"| CPU
+    FSM -->|"sel: CPU vs SDRAM"| MUXR
+    MUXR -->|"to SDRAM (write-back)"| SC
+    FSM -->|"RDY (low during transaction)"| CPU
     FSM --> XFER
-    XFER -->|"WEN, ADD[7:0], DIN"| SRAM
-    SRAM -->|"DOUT"| CPU
-    FSM -->|"RDY (low during miss)"| CPU
     XFER --> ADDRGEN
     ADDRGEN -->|"ADD[15:0] (offset=0)"| SC["SDRAM CONTROLLER"]
     XFER -->|"MEMSTRB, WR/RD"| SC
@@ -93,4 +105,8 @@ flowchart TB
       write-back addresses).
 - [ ] Dirty=1 replacement order: write-back *first*, then fetch.
 - [ ] RDY behavior explained (stalled during miss).
+- [ ] Write-data 2:1 mux (CPU DIN / SDRAM DOUT → SRAM DIN) shown, FSM-controlled.
+- [ ] Read-data 1:2 mux (SRAM DOUT → CPU or SDRAM) shown, FSM-controlled.
+- [ ] No direct splitter→SRAM arrows; SRAM address driven by block-transfer logic.
+- [ ] CS and WR/RD wired into the FSM (CS also gates the splitter input).
 - [ ] Storage structure matches whatever you actually settle on in VHDL.
