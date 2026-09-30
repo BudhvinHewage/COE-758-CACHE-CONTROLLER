@@ -1,11 +1,9 @@
 # 2. Cache Controller — Internal Block Diagram
 
-## What this artifact is
-Opens the box from artifact #1 and shows the logic *inside* the cache controller:
+## What this diagram shows
+Opens the device and shows the logic *inside* the cache controller:
 how the 16-bit address is split, where tag/valid/dirty live, how hit/miss is
-decided, and how block transfers are controlled. (Step 3 of the 7-step process:
-"Block Diagram & Behavioral Description — FSM, tag/valid/dirty storage,
-comparators.")
+decided, and how block transfers are controlled.
 
 ## What the course is asking for
 From the project spec (this repo's `README.md`):
@@ -29,6 +27,22 @@ From the project spec (this repo's `README.md`):
   (8-bit byte addresses, `WEN`).
 - **RDY** to the CPU — high when the controller has the data (or accepts a write);
   low while the FSM is mid-miss.
+
+### Notes
+
+- **Valid bit** — Indicates whether the cache storage contains a **usable block**.
+  - `0` → Entry is invalid, the stored tag/data must not be treated as a cache hit.
+  - `1` → Entry contains a valid cached block and its tag can be used for hit detection.
+
+- **Dirty bit** — Indicates whether the cached block has been **modified by a CPU write** since it was fetched from SDRAM.
+  - `0` → Cache data matches SDRAM, the block can be discarded without writing it back.
+  - `1` → Cache data is newer than SDRAM, the block **must be written back to SDRAM before replacement**.
+
+- **Together:**
+  - `valid = 0` → No valid cached data.
+  - `valid = 1, dirty = 0` → Valid, **clean** block.
+  - `valid = 1, dirty = 1` → Valid, **modified/dirty** block requiring write-back on replacement.
+
 
 ## Mermaid draft
 
@@ -56,9 +70,9 @@ flowchart TB
     SPLIT -->|"OFFSET (5b)"| SRAM
     TAGR -->|"stored tag"| CMP
     VR -->|"valid?"| CMP
-    CMP -->|"hit/miss + valid"| FSM
+    CMP -->|"hit/miss + valid(y/n)"| FSM
     FSM -->|"replace tag (on miss)"| TAGR
-    FSM -->|"set/clear (case 1: set)<br/>task switch: clear all"| VR
+    FSM -->|"set (case 1 or 3)"| VR
     FSM -->|"set on write, check on miss"| DR
     DR --> FSM
     FSM --> XFER
@@ -70,14 +84,7 @@ flowchart TB
     XFER <-->|"DIN/DOUT, MEMSTRB, WR/RD"| SC
 ```
 
-> Adjust:
-> - **FSM states**: I listed IDLE → HIT_R / HIT_W / MISS_FETCH / MISS_WRITEBACK.
->   If your design uses a different state breakdown (e.g., a separate
->   `WRITING_BLOCK` count state), swap it in — this diagram is the template, your
->   settled design wins.
-> - If the handout wants the **behavioral description as a state diagram** rather
->   than (or alongside) a block diagram, add a `stateDiagram-v2` — same states,
->   transitions labeled with the four cases.
+
 
 ## Checklist before submission
 - [ ] Address fields are **8/3/5** (project spec), not the lecture's 12/16/4.
