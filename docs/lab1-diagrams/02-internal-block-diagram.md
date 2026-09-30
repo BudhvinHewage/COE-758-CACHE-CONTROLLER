@@ -93,7 +93,7 @@ flowchart TB
     FSM --> XFER
     XFER --> ADDRGEN
     ADDRGEN -->|"ADD[15:0] (offset=0)"| SC["SDRAM CONTROLLER"]
-    XFER <-->|"MEMSTRB, WR/RD, DIN/DOUT"| SC
+    XFER -->|"MEMSTRB, WR/RD"| SC
 ```
 
 
