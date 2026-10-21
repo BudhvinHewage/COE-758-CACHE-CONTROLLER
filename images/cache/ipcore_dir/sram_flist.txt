@@ -1,0 +1,15 @@
+# Output products list for <sram>
+_xmsgs/pn_parser.xmsgs
+blk_mem_gen_ds512.pdf
+blk_mem_gen_v6_3_readme.txt
+sram.asy
+sram.gise
+sram.ngc
+sram.sym
+sram.vhd
+sram.vho
+sram.xco
+sram.xise
+sram_flist.txt
+sram_xmdf.tcl
+summary.log

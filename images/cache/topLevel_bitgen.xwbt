@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/student1/bhewage/Documents/cache/topLevel.ncd
+OUTFILE=/home/student1/bhewage/Documents/cache/topLevel.bit
+FAMILY=Spartan3E
+PART=xc3s500e-5fg320
+WORKINGDIR=/home/student1/bhewage/Documents/cache
+LICENSE=ISE
+USER_INFO=175353682_1777596690_210814335_448

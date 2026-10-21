@@ -1,0 +1,14 @@
+AR ila ila_a /home/student1/bhewage/Documents/cache/ipcore_dir/ila.vhd sub00/vhpl03 1792530476
+EN cachecontroller NULL /home/student1/bhewage/Documents/as/cacheController.vhd sub00/vhpl04 1792530477
+AR icon icon_a /home/student1/bhewage/Documents/cache/ipcore_dir/icon.vhd sub00/vhpl01 1792530474
+EN sdramcontroller NULL /home/student1/bhewage/Documents/as/sdramController.vhd sub00/vhpl08 1792530481
+EN icon NULL /home/student1/bhewage/Documents/cache/ipcore_dir/icon.vhd sub00/vhpl00 1792530473
+EN cpu_gen NULL /home/student1/bhewage/Documents/as/CPU_gen.vhd sub00/vhpl06 1792530479
+EN sram NULL /home/student1/bhewage/Documents/cache/ipcore_dir/sram.vhd sub00/vhpl10 1792530483
+AR sram sram_a /home/student1/bhewage/Documents/cache/ipcore_dir/sram.vhd sub00/vhpl11 1792530484
+EN toplevel NULL /home/student1/bhewage/Documents/as/topLevel.vhd sub00/vhpl12 1792530485
+AR cachecontroller behavioral /home/student1/bhewage/Documents/as/cacheController.vhd sub00/vhpl05 1792530478
+AR cpu_gen behavioral /home/student1/bhewage/Documents/as/CPU_gen.vhd sub00/vhpl07 1792530480
+AR sdramcontroller behavioral /home/student1/bhewage/Documents/as/sdramController.vhd sub00/vhpl09 1792530482
+AR toplevel behavioral /home/student1/bhewage/Documents/as/topLevel.vhd sub00/vhpl13 1792530486
+EN ila NULL /home/student1/bhewage/Documents/cache/ipcore_dir/ila.vhd sub00/vhpl02 1792530475

@@ -1,0 +1,18 @@
+xst -intstyle ise -ifn "/home/student1/bhewage/Documents/cache/topLevel.xst" -ofn "/home/student1/bhewage/Documents/cache/topLevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc topLevel.ucf -p xc3s500e-fg320-5 topLevel.ngc topLevel.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o topLevel_map.ncd topLevel.ngd topLevel.pcf 
+par -w -intstyle ise -ol high -t 1 topLevel_map.ncd topLevel.ncd topLevel.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml topLevel.twx topLevel.ncd -o topLevel.twr topLevel.pcf -ucf topLevel.ucf 
+bitgen -intstyle ise -f topLevel.ut topLevel.ncd 
+xst -intstyle ise -ifn "/home/student1/bhewage/Documents/cache/topLevel.xst" -ofn "/home/student1/bhewage/Documents/cache/topLevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc topLevel.ucf -p xc3s500e-fg320-5 topLevel.ngc topLevel.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o topLevel_map.ncd topLevel.ngd topLevel.pcf 
+par -w -intstyle ise -ol high -t 1 topLevel_map.ncd topLevel.ncd topLevel.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml topLevel.twx topLevel.ncd -o topLevel.twr topLevel.pcf -ucf topLevel.ucf 
+bitgen -intstyle ise -f topLevel.ut topLevel.ncd 
+xst -intstyle ise -ifn "/home/student1/bhewage/Documents/cache/topLevel.xst" -ofn "/home/student1/bhewage/Documents/cache/topLevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc topLevel.ucf -p xc3s500e-fg320-5 topLevel.ngc topLevel.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o topLevel_map.ncd topLevel.ngd topLevel.pcf 
+par -w -intstyle ise -ol high -t 1 topLevel_map.ncd topLevel.ncd topLevel.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml topLevel.twx topLevel.ncd -o topLevel.twr topLevel.pcf -ucf topLevel.ucf 
+bitgen -intstyle ise -f topLevel.ut topLevel.ncd 

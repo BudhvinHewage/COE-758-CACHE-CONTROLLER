@@ -1,0 +1,3 @@
+NET "CLK"   LOC="C9";
+NET "CLK"   PERIOD= 20ns HIGH 50%;
+NET "MON_RDY" LOC="F12";

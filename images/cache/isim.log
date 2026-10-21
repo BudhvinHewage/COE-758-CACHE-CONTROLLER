@@ -1,0 +1,25 @@
+ISim log file
+Running: /home/student1/bhewage/Documents/cache/tb_topLevel_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/student1/bhewage/Documents/cache/tb_topLevel_isim_beh.wdb 
+ISim O.87xd (signature 0x8ddf5b5d)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_toplevel/UUT/U_CTRL/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_toplevel/UUT/U_SDRAM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+ISim O.87xd (signature 0x8ddf5b5d)
+This is a Full version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_toplevel/UUT/U_CTRL/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_toplevel/UUT/U_SDRAM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+# restart
+# run 12.00us
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_toplevel/UUT/U_CTRL/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_toplevel/UUT/U_SDRAM/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.

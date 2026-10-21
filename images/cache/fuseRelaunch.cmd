@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/student1/bhewage/Documents/cache/tb_topLevel_isim_beh.exe" -prj "/home/student1/bhewage/Documents/cache/tb_topLevel_beh.prj" "work.tb_topLevel" 
